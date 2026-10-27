@@ -1,0 +1,5 @@
+target/
+config.toml
+.DS_Store
+/pronounce-api.exe
+/pronounce-api

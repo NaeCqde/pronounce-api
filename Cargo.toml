@@ -1,0 +1,34 @@
+[package]
+name = "pronounce_api"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "pronounce-api"
+path = "src/main.rs"
+
+[dependencies]
+log = "0.4"
+env_logger = "0.11"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+
+# The server. Only HTTP/1 and query strings are used, so the rest of axum is left out.
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "signal"] }
+axum = { version = "0.8", default-features = false, features = ["http1", "tokio", "query"] }
+
+# The text is NFKC-normalized before it is split into words (`romanizer.rs`), like cutlet does.
+unicode-normalization = "0.1"
+
+# The morphological analyzer and its dictionary. `embed-unidic` downloads UniDic while building and
+# links it into the executable, so there is nothing to install next to the binary (it makes the
+# executable large). The TLS used to download it is rustls, so no OpenSSL is needed, also for musl.
+lindera = { version = "6", default-features = false, features = ["embed-unidic"] }
+
+[dev-dependencies]
+# Calling the router without a socket (`api.rs` tests).
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"
+
+[profile.release]
+strip = true
