@@ -17,7 +17,7 @@
 - ひらがなで書かれた外来語(`ふらすとれーしょん`)は 1 語につなぎます。`loanwords=english` を付けると英単語にもできます
   (`frustration`)。
 
-[okazuri_bot](../okazuri_bot) の Python 版(FastAPI + cutlet)の置き換えです。`GET /pronounce` は同じです。
+[Okazuri BOT](https://github.com/NaeCqde/okazuri_bot) で使っています。
 
 ## 動かす
 
@@ -46,12 +46,12 @@ curl "http://127.0.0.1:8000/pronounce?q=%E3%83%81%E3%83%BC%E3%83%88"        # ch
 
 push のたびに、実行ファイル・README・設定の雛形・ライセンスを入れたアーカイブが作られます。
 
-| アーカイブ | |
-|---|---|
-| `pronounce-api-Linux-x86_64-musl` | **静的リンク**で glibc に依存しません。どの Linux x86_64 サーバー(VPS、コンテナ)でも動きます |
-| `pronounce-api-Linux-x86_64`、`-Linux-aarch64` | glibc 版 |
-| `pronounce-api-Windows-x86_64`、`-Windows-aarch64` | |
-| `pronounce-api-macOS-aarch64` | |
+| アーカイブ                                         |                                                                                              |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `pronounce-api-Linux-x86_64-musl`                  | **静的リンク**で glibc に依存しません。どの Linux x86_64 サーバー(VPS、コンテナ)でも動きます |
+| `pronounce-api-Linux-x86_64`、`-Linux-aarch64`     | glibc 版                                                                                     |
+| `pronounce-api-Windows-x86_64`、`-Windows-aarch64` |                                                                                              |
+| `pronounce-api-macOS-aarch64`                      |                                                                                              |
 
 実行ファイルは約 190 MB です(UniDic を埋め込んでいるため)。サーバーでの動かし方は [docs/DEPLOY.md](docs/DEPLOY.md) にあります。
 

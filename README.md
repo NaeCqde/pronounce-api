@@ -17,7 +17,7 @@ dictionary inside it, nothing else to install.
 - A loanword spelled in hiragana (ふらすとれーしょん) is one word, and can be turned into English too
   (`loanwords=english`: `frustration`).
 
-It replaces the Python server (FastAPI + cutlet) of [okazuri_bot](../okazuri_bot): the same `GET /pronounce`.
+Used by [Okazuri BOT](https://github.com/NaeCqde/okazuri_bot).
 
 ## Run it
 
@@ -46,12 +46,12 @@ The query is percent-encoded UTF-8. The endpoints are in [docs/API.md](docs/API.
 
 Every push builds the archives (the executable, the READMEs, the config template, the license):
 
-| Archive | |
-|---|---|
-| `pronounce-api-Linux-x86_64-musl` | **static**, no glibc: runs on any Linux x86_64 server (a VPS, a container) |
-| `pronounce-api-Linux-x86_64`, `-Linux-aarch64` | glibc |
-| `pronounce-api-Windows-x86_64`, `-Windows-aarch64` | |
-| `pronounce-api-macOS-aarch64` | |
+| Archive                                            |                                                                            |
+| -------------------------------------------------- | -------------------------------------------------------------------------- |
+| `pronounce-api-Linux-x86_64-musl`                  | **static**, no glibc: runs on any Linux x86_64 server (a VPS, a container) |
+| `pronounce-api-Linux-x86_64`, `-Linux-aarch64`     | glibc                                                                      |
+| `pronounce-api-Windows-x86_64`, `-Windows-aarch64` |                                                                            |
+| `pronounce-api-macOS-aarch64`                      |                                                                            |
 
 The executable is about 190 MB: UniDic is linked into it. How to run it on a server is in
 [docs/DEPLOY.md](docs/DEPLOY.md).
